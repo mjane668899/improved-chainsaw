@@ -8,17 +8,23 @@ class SearchForm extends Component {
     };
 
     this._handleSubmit = this._handleSubmit.bind(this);
-    this._handleChange = this._handleChange.bind(this);
-  }
-
-  _handleChange(event) {
-    this.setState( {content: event.target.value})
+    this._handleOrigin = this._handleOrigin.bind(this);
+    this._handleDestination = this._handleDestination.bind(this);
   }
 
   _handleSubmit(event) {
     event.preventDefault();
     this.props.onSubmit( this.state.content );
+  }
 
+  _handleOrigin(event) {
+    event.preventDefault();
+    this.setState( {origin: event.target.value})
+    }
+
+  _handleDestination(event) {
+    event.preventDefault();
+    this.setState( {destination: event.target.value} );
   }
 
   resetForm = () => {
@@ -33,23 +39,22 @@ class SearchForm extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
-            onChange={this._handleChange}
+            onChange={this._handleOrigin}
             id="origin"
             type="text"
-            placeholder="From " />
+            placeholder="Origin " />
           <input
             id="destination"
-            onChange={this._handleChange}
+            onChange={this._handleDestination}
             type="text"
-            placeholder="To " />
+            placeholder="Destination " />
           <input
             onClick={this.resetForm}
             type="button"
             value="Cancel" />
           <input
-            onSubmit={this.handleSubmit}
             type="button"
             value="Save" />
         </form>
