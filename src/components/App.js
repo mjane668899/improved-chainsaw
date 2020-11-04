@@ -1,4 +1,5 @@
 import Flights from './Flights/Flights'
+import Search from './Search/Search'
 
 function App() {
   return (
