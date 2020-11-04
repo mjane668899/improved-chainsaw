@@ -1,7 +1,34 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+import SearchFlights from './SearchFlights';
+import SearchDisplay from './SearchDisplay';
+
+const SERVER_URL = 'http://localhost:3000/secrets.json';
+// const SERVER_URL = 'http://940c7ac29dd5.ngrok.io/flights.json'
 
 
 class Search extends Component {
+  constructor() {
+    super();
+    this.state = {
+      all_flights: [],
+      searchOrigin: '',
+      searchDestination: ''
+    };
+
+    const fetchFlights = () => {
+      axios.get(SERVER_URL).then((results) => {
+        this.setState({all_flights: results.data});//< could be results.something else
+      });
+    };
+
+    fetchFlights()
+
+  }
+
+
+
   render() {
     return (
       <div>
@@ -13,19 +40,7 @@ class Search extends Component {
   }
 }
 
-class SearchForm extends Component {
-  render() {
-    return (
-      <h1>Form on the way</h1>
-    );
-  }
-}
 
-const SearchDisplay = (props) => {
-  return (
-    <h1>List of flights coming soon </h1>
-  );
-}
 
 
 export default Search;
