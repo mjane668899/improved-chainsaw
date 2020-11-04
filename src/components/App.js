@@ -5,7 +5,6 @@ import Search from './Search/Search'
 function App() {
   return (
     <div className="App">
-      <Flights />
       <Search />
     </div>
   );

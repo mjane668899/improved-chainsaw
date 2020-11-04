@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import SearchForm from './SearchForm';
 import SearchDisplay from './SearchDisplay';
+import './search.css'
 
 const SERVER_URL = 'http://localhost:3000/flights.json';
 // const SERVER_URL = 'http://940c7ac29dd5.ngrok.io/flights.json'
