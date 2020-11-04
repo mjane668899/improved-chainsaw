@@ -1,10 +1,12 @@
-import logo from '../logo.svg';
-import '../App.css';
+import Flights from './Flights/Flights'
+import Search from './Search/Search'
 
 
 function App() {
   return (
     <div className="App">
+      <Flights />
+      <Search />
     </div>
   );
 }
