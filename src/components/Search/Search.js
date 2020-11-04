@@ -36,6 +36,7 @@ class Search extends Component {
     return (
       <div>
         <h2> Crappy Airplane Search </h2>
+        <button >Search Flight</button>
         <SearchForm />
         <SearchDisplay />
       </div>

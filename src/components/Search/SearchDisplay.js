@@ -2,23 +2,22 @@ const SearchDisplay = (props) => {
 
   return (
     <div>
-      <h1>Flight Search Results </h1>
+      <h3>Flight Search Results </h3>
       <table>
         <tr>
           <th>Date</th>
           <th>Flight</th>
           <th>From</th>
-          <th> > </th>
           <th> To </th>
           <th> Plane </th>
         </tr>
         <tr>
-          <th>Men</th>
-          <th>Women</th>
-          <th>Men</th>
-          <th>Women</th>
-          <th>Men</th>
-          <th>Women</th>
+          <th>comming soon</th>
+          <th>comming soon</th>
+          <th>comming soon</th>
+          <th>comming soon</th>
+          <th>comming soon</th>
+
         </tr>
         </table>
     </div>
