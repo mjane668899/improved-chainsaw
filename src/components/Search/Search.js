@@ -11,25 +11,6 @@ const SERVER_URL = 'http://localhost:3000/flights.json';
 
 
 class Search extends Component {
-<<<<<<< HEAD
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     all_flights: [],
-  //     searchOrigin: '',
-  //     searchDestination: ''
-  //   };
-  //
-  //   const fetchFlights = () => {
-  //     axios.get(SERVER_URL).then((results) => {
-  //       this.setState({all_flights: results.data});//< could be results.something else
-  //     });
-  //   };
-  //
-  //   fetchFlights()
-  //
-  // }
-=======
   constructor() {
     super();
     this.state = {
@@ -48,7 +29,6 @@ class Search extends Component {
     fetchFlights();
 
   }
->>>>>>> 3265dad23c356b099a2bf4e52c18557aa722d93e
 
 
 
