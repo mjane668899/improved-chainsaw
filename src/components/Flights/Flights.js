@@ -4,12 +4,18 @@ import FlightsForm from './FlightsForm';
 import FlightsDisplay from './FlightsDisplay';
 
 class Flights extends Component {
+constructor() {
+  super();
+  this.state = {
+    flights: []
+    }
+  }
 
   render() {
     return (
       <div>
         <h1>Virgin Airlines</h1>
-        <input type="button" value="Create Flight" />
+        <button >Create Flight</button>
         <FlightsForm />
       </div>
     )
