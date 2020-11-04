@@ -27,5 +27,4 @@ const SearchDisplay = (props) => {
   );
 }
 
-
 export default Search;

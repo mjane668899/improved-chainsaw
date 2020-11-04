@@ -1,21 +1,24 @@
 import React, {Component} from 'react'
 
 class FlightsForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       flight: '',
       baseState: ''
     };
 
     this._handleChange = this._handleChange.bind(this);
-
-    this.baseState = this.state;
   }
 
   _handleChange(event) {
     console.log('change', event.target.value)
     this.setState( {flight: event.target.value})
+  }
+
+  _handleSubmit(event) {
+    event.preventDefault();
+
   }
 
   resetForm = () => {
@@ -31,13 +34,38 @@ class FlightsForm extends Component {
     return (
       <div>
         <form>
-          <input onChange={this._handleChange} type="text" placeholder="flight #" />
-          <input onChange={this._handleChange} type="text" placeholder="date" />
-          <input onChange={this._handleChange} type="text" placeholder="to" />
-          <input onChange={this._handleChange} type="text" placeholder="from" />
-          <input onChange={this._handleChange} type="text" placeholder="plane" />
-          <input onClick={this.resetForm} type="button" value="Cancel" />
-          <input type="button" value="Save" />
+          <input
+            onChange={this._handleChange}
+            id="flightNumber"
+            type="text"
+            placeholder="flight #" />
+          <input
+            id="date"
+            onChange={this._handleChange}
+            type="text"
+            placeholder="date" />
+          <input
+            id="to"
+            onChange={this._handleChange}
+            type="text"
+            placeholder="to" />
+          <input
+            id="from"
+            onChange={this._handleChange}
+            type="text"
+            placeholder="from" />
+          <input
+            id="plane"
+            onChange={this._handleChange}
+            type="text"
+            placeholder="plane" />
+          <input
+            onClick={this.resetForm}
+            type="button"
+            value="Cancel" />
+          <input
+            type="button"
+            value="Save" />
         </form>
       </div>
     )

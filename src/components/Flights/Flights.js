@@ -15,7 +15,7 @@ constructor() {
     return (
       <div>
         <h1>Virgin Airlines</h1>
-        <input type="submit" value="Create Flight" />
+        <button >Create Flight</button>
         <FlightsForm />
       </div>
     )
