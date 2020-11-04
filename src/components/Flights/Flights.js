@@ -5,7 +5,6 @@ import FlightsDisplay from './FlightsDisplay';
 
 class Flights extends Component {
 
-
   render() {
     return (
       <div>
