@@ -8,6 +8,7 @@ class SearchForm extends Component {
     };
 
     this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleChange = this._handleChange.bind(this);
   }
 
   _handleChange(event) {
