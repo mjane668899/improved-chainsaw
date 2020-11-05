@@ -12,10 +12,11 @@ class Search extends Component {
   constructor() {
     super();
     this.state = {
-      all_flights: [],
-
-      // origin: '',
-      // destination: ''
+      date: '',
+      flight: '',
+      origin: '',
+      destination: '',
+      plane: ''
     };
     this.saveFlight = this.saveFlight.bind(this)
 
@@ -32,10 +33,18 @@ class Search extends Component {
   saveFlight(origin, destination) {
     console.log('hello')
     axios.get(SERVER_URL, {origin: origin, destination: destination}).then((results) => {
-       console.log(results.data);
-       // this.setState({results.data, [...this.state.all_flights, results.data]
-       // })
-  });
+      
+
+      // for (let i = 0; i < results.data.length; i++) {
+      //   if (results.data[i].origin === origin && results.data[i].destination === destination)  {
+      //     console.log(results.data[i])
+      // }
+
+      }
+       // console.log(results.data[2].origin);
+       // console.log(origin);
+       // this.setState(results.data);
+     });
 }
 
 
