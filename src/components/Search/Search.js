@@ -15,6 +15,9 @@ class Search extends Component {
     super();
     this.state = {
       all_flights: [],
+
+      origin: '',
+      destination: ''
     };
 
 
@@ -30,6 +33,12 @@ class Search extends Component {
 
   }
 
+  saveFlight(origin) {
+    axios.post(SERVER_URL, {origin: origin}).then((results) => {
+       console.log(results.data);
+       // this.setState({all_flights: [...this.state.all_flights, results.data]})
+  });
+}
 
 
   render() {
@@ -37,7 +46,7 @@ class Search extends Component {
       <div>
         <h2> Crappy Airplane Search </h2>
         <button >Search Flight</button>
-        <SearchForm />
+        <SearchForm onSubmit={this.saveFlight}/>
         <SearchDisplay />
       </div>
     );

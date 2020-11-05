@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 class SearchForm extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      all_flight: '',
+      origin: '',
+      destination: ''
     };
 
     this._handleSubmit = this._handleSubmit.bind(this);
@@ -14,7 +15,14 @@ class SearchForm extends Component {
 
   _handleSubmit(event) {
     event.preventDefault();
-    this.props.onSubmit( this.state.content );
+    console.log('about to search for', this.state.origin);
+    this.props.onSubmit( this.state.origin );
+    this.props.onSubmit( this.state.destination );
+
+    // this.setState({
+    //   origin: '',
+    //   destination: ''}
+    // );
   }
 
   _handleOrigin(event) {
@@ -32,7 +40,8 @@ class SearchForm extends Component {
       input => (input.value = '')
     );
     this.setState( {
-      all_flight_values: [{}]
+      origin: '',
+      destination: ''
     })
   }
 
@@ -54,9 +63,10 @@ class SearchForm extends Component {
             onClick={this.resetForm}
             type="button"
             value="Cancel" />
-          <input
-            type="button"
-            value="Save" />
+          <button
+            type="submit"
+            value="Save" >Submit
+            </button>
         </form>
       </div>
     );
