@@ -16,8 +16,7 @@ class SearchForm extends Component {
   _handleSubmit(event) {
     event.preventDefault();
     console.log('about to search for', this.state.origin);
-    this.props.onSubmit( this.state.origin );
-    this.props.onSubmit( this.state.destination );
+    this.props.onSubmit( this.state.origin, this.state.destination );
 
     // this.setState({
     //   origin: '',
@@ -48,7 +47,7 @@ class SearchForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this._handleSubmit}>
           <input
             onChange={this._handleOrigin}
             id="origin"

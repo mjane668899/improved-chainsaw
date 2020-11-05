@@ -17,7 +17,6 @@ const SearchDisplay = (props) => {
           <th>comming soon</th>
           <th>comming soon</th>
           <th>comming soon</th>
-
         </tr>
         </table>
     </div>

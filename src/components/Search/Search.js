@@ -8,35 +8,33 @@ import './search.css'
 const SERVER_URL = 'http://localhost:3000/flights.json';
 // const SERVER_URL = 'http://940c7ac29dd5.ngrok.io/flights.json'
 
-
-
 class Search extends Component {
   constructor() {
     super();
     this.state = {
       all_flights: [],
 
-      origin: '',
-      destination: ''
+      // origin: '',
+      // destination: ''
     };
+    this.saveFlight = this.saveFlight.bind(this)
 
-
-    const fetchFlights = () => {
-      axios.get(SERVER_URL).then((results) => {
-        console.log( results.data )
-        this.setState({all_flights: results.data});
-
-      });
-    };
-
-    fetchFlights();
-
+  //   const fetchFlights = () => {
+  //     axios.get(SERVER_URL).then((results) => {
+  //       console.log( results.data )
+  //       this.setState({all_flights: results.data});
+  //     });
+  //   };
+  //
+  //   fetchFlights();
   }
 
-  saveFlight(origin) {
-    axios.post(SERVER_URL, {origin: origin}).then((results) => {
+  saveFlight(origin, destination) {
+    console.log('hello')
+    axios.get(SERVER_URL, {origin: origin, destination: destination}).then((results) => {
        console.log(results.data);
-       // this.setState({all_flights: [...this.state.all_flights, results.data]})
+       // this.setState({results.data, [...this.state.all_flights, results.data]
+       // })
   });
 }
 

@@ -1,4 +1,4 @@
-import Flights from './Flights/Flights'
+// import Flights from './Flights/Flights'
 import Search from './Search/Search'
 
 
